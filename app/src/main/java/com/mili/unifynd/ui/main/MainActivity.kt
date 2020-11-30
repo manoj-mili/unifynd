@@ -20,7 +20,9 @@ class MainActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
         binding.lifecycleOwner = this
+
         injector.inject(this)
+
         binding.vpSlider.adapter = fragmentAdapter
         binding.vpSlider.isUserInputEnabled = false;
         TabLayoutMediator(binding.tbViews, binding.vpSlider) { tab, position ->
